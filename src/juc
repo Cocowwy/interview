@@ -26,4 +26,8 @@
                  1.synchronized
                  2.AtomicInteger
                    getAndIncrement() ===> Atomically increments by one the current value. 原子性的给当前值加1
+  指令重排： 单线程环境里面确保程序最终执行结果和代码顺序执行的结果一致
+            处理器在进行重排序时必需要考虑指令之间的数据依赖性
+            多线程环境中线程交替进行，由于编译器优化重调的存在，两个线程中使用的变量能否保证一致性是无法确定的，结果无法预测
 
+  DCL（Double Check Lock双端检锁机制） 双重锁校验 【SingletonDemo】:运用到了volatile
